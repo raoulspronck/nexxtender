@@ -1,0 +1,22 @@
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  client_id: !secret mqtt_client_id
+  topic_prefix: null
+  birth_message:
+    topic: !secret mqtt_lastwill_topic
+    payload: connected
+  will_message:
+    topic: !secret mqtt_lastwill_topic
+    payload: disconnected
+
+interval:
+  - interval: 60s
+    then:
+      - mqtt.publish_json:
+          topic: !secret mqtt_device_publish_topic
+          payload: |-
+            root["charging_energy"] = id(charging_basic_energy).state;
+            root["charging_seconds"] = id(charging_basic_seconds).state;
+            root["charging_state"] = id(charging_basic_status).state;
