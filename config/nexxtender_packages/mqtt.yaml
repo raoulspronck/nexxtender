@@ -7,6 +7,9 @@ mqtt:
   log_topic: null
   keepalive: 5s
   reboot_timeout: 0s
+  discover_ip: False
+  discovery: False
+  discovery_retain: False
   birth_message:
     topic: !secret mqtt_lastwill_topic
     payload: connected
