@@ -6,7 +6,6 @@ mqtt:
   topic_prefix: null
   log_topic: null
   keepalive: 5s
-  publish_nan_as_none: True
   reboot_timeout: 0s
   birth_message:
     topic: !secret mqtt_lastwill_topic
