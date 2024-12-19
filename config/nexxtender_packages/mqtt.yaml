@@ -6,14 +6,14 @@ mqtt:
   topic_prefix: null
   log_topic: null
   keepalive: 5s
+  publish_nan_as_none: True
+  reboot_timeout: 0s
   birth_message:
     topic: !secret mqtt_lastwill_topic
     payload: connected
   will_message:
     topic: !secret mqtt_lastwill_topic
     payload: disconnected
-  publish_nan_as_none: true
-  reboot_timeout: 0s
 
 interval:
   - interval: 60s
