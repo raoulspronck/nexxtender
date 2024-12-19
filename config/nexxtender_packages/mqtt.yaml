@@ -4,12 +4,16 @@ mqtt:
   password: !secret mqtt_password
   client_id: !secret mqtt_client_id
   topic_prefix: null
+  log_topic: null
+  keepalive: 5s
   birth_message:
     topic: !secret mqtt_lastwill_topic
     payload: connected
   will_message:
     topic: !secret mqtt_lastwill_topic
     payload: disconnected
+  publish_nan_as_none: true
+  reboot_timeout: 0s
 
 interval:
   - interval: 60s
