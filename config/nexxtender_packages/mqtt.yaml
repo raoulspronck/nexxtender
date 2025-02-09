@@ -27,6 +27,6 @@ interval:
             - mqtt.publish_json:
                 topic: !secret mqtt_device_publish_topic
                 payload: |-
-                  root["charging_energy"] = id(charging_basic_energy).state;
-                  root["charging_seconds"] = id(charging_basic_seconds).state;
-                  root["charging_state"] = id(charging_basic_status).state;
+                  root["charging-energy"] = id(charging_basic_energy).state;
+                  root["charging-seconds"] = id(charging_basic_seconds).state;
+                  root["charging-state"] = id(charging_basic_status).state;
